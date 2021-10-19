@@ -19,8 +19,8 @@ class CurveDrawer
 		// Muestreo del parámetro t
 		this.steps = 100;
 		var tv = [];
-		for (let i = 0; i < this.steps; i++ ) {
-			tv.push(i / (this.steps - 1) );
+		for (let i = 0; i < this.steps; i++) {
+			tv.push(i / (this.steps - 1));
 		}
 		
 		this.buffer = gl.createBuffer();
@@ -30,7 +30,7 @@ class CurveDrawer
 	}
 
 	// Actualización del viewport (se llama al inicializar la web o al cambiar el tamaño de la pantalla)
-	setViewport( width, height )
+	setViewport(width, height)
 	{
 		var trans = [ 
 			2 / width, 0, 0, 0,
@@ -43,9 +43,9 @@ class CurveDrawer
 		gl.uniformMatrix4fv(this.mvp, false, trans);
 	}
 
-	updatePoints( pt )
+	updatePoints(pt)
 	{
-		gl.useProgram( this.prog );
+		gl.useProgram(this.prog);
 		
 		for (let i = 0; i < 4; i++) {
 			var x = pt[i].getAttribute("cx");
